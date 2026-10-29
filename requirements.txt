@@ -1,0 +1,8 @@
+# Runtime dependencies (tested with Python 3.12). scikit-learn is pinned exactly because the
+# saved joblib model is only guaranteed to load with the version it was trained with.
+numpy>=1.26,<3
+pandas>=2.2,<4
+scikit-learn==1.8.0
+joblib>=1.3,<2
+matplotlib>=3.8,<4
+streamlit>=1.36,<2

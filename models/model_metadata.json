@@ -1,0 +1,170 @@
+{
+  "model_version": "1.0.0",
+  "project_version": "1.0.0",
+  "trained_at_utc": "2026-10-29T04:50:10+00:00",
+  "selected_model": "Logistic Regression",
+  "selection_rationale": "Highest nested-CV ROC-AUC: Random Forest (0.913). Models within one standard error (0.011): ['Logistic Regression', 'Random Forest']. The simplest of these was chosen: Logistic Regression.",
+  "best_params": {
+    "clf__C": 0.1
+  },
+  "calibrated": false,
+  "threshold": 0.46,
+  "positive_class_text": "Class 1 (labelled 'heart disease present' in the dataset)",
+  "negative_class_text": "Class 0 (labelled 'no heart disease' in the dataset)",
+  "feature_names": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "input_schema": {
+    "age": {
+      "label": "Age",
+      "unit": "years",
+      "kind": "numeric",
+      "min": 18,
+      "max": 100,
+      "integer": true
+    },
+    "sex": {
+      "label": "Sex",
+      "kind": "binary",
+      "choices": {
+        "0": "Female (0)",
+        "1": "Male (1)"
+      }
+    },
+    "cp": {
+      "label": "Chest pain type",
+      "kind": "categorical",
+      "choices": {
+        "0": "0 - typical angina",
+        "1": "1 - atypical angina",
+        "2": "2 - non-anginal pain",
+        "3": "3 - asymptomatic"
+      }
+    },
+    "trestbps": {
+      "label": "Resting blood pressure",
+      "unit": "mm Hg",
+      "kind": "numeric",
+      "min": 70,
+      "max": 250,
+      "integer": true
+    },
+    "chol": {
+      "label": "Serum cholesterol",
+      "unit": "mg/dl",
+      "kind": "numeric",
+      "min": 100,
+      "max": 700,
+      "integer": true
+    },
+    "fbs": {
+      "label": "Fasting blood sugar > 120 mg/dl",
+      "kind": "binary",
+      "choices": {
+        "0": "No (0)",
+        "1": "Yes (1)"
+      }
+    },
+    "restecg": {
+      "label": "Resting ECG result",
+      "kind": "categorical",
+      "choices": {
+        "0": "0 - normal",
+        "1": "1 - ST-T wave abnormality",
+        "2": "2 - LV hypertrophy"
+      }
+    },
+    "thalach": {
+      "label": "Maximum heart rate achieved",
+      "unit": "bpm",
+      "kind": "numeric",
+      "min": 60,
+      "max": 220,
+      "integer": true
+    },
+    "exang": {
+      "label": "Exercise-induced angina",
+      "kind": "binary",
+      "choices": {
+        "0": "No (0)",
+        "1": "Yes (1)"
+      }
+    },
+    "oldpeak": {
+      "label": "ST depression (oldpeak)",
+      "unit": "mm",
+      "kind": "numeric",
+      "min": 0.0,
+      "max": 10.0,
+      "integer": false
+    },
+    "slope": {
+      "label": "Slope of peak-exercise ST segment",
+      "kind": "categorical",
+      "choices": {
+        "0": "0 - upsloping",
+        "1": "1 - flat",
+        "2": "2 - downsloping"
+      }
+    },
+    "ca": {
+      "label": "Major vessels coloured by fluoroscopy",
+      "kind": "numeric",
+      "min": 0,
+      "max": 4,
+      "integer": true
+    },
+    "thal": {
+      "label": "Thalassemia test result (code)",
+      "kind": "categorical",
+      "choices": {
+        "1": "Code 1",
+        "2": "Code 2",
+        "3": "Code 3"
+      },
+      "data_choices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "training_config": {
+    "random_state": 42,
+    "test_size": 0.2,
+    "dedup": "exact duplicate rows removed (keep first) before splitting",
+    "n_train": 241,
+    "n_test": 61,
+    "outer_cv": "RepeatedStratifiedKFold",
+    "inner_cv": "StratifiedKFold, ROC-AUC",
+    "quick_mode": false
+  },
+  "test_metrics_summary": {
+    "accuracy": 0.8524590163934426,
+    "precision_class1": 0.8529411764705882,
+    "recall_class1": 0.8787878787878788,
+    "f1_class1": 0.8656716417910447,
+    "roc_auc": 0.9112554112554112
+  },
+  "environment": {
+    "python": "3.12.3",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "joblib": "1.5.3"
+  },
+  "artifact_sha256": "a2dcacc0b02a65110567aadcfc1f8e9901c22733070b8c26d5d6398a3d3823ce"
+}

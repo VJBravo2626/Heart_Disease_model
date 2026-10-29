@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+# Environments / secrets
+.venv/
+venv/
+env/
+.env
+.streamlit/secrets.toml
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Local training experiments (the deployed artifact models/heart_pipeline.joblib IS committed on purpose)
+models/*_experiment*
+reports/*_experiment*
+nohup.out
